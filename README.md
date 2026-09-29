@@ -57,35 +57,52 @@ Chạy **100% Local-first** trên trình duyệt, không cần cài đặt máy 
 
 ---
 
-## 🚀 Cài đặt & Khởi chạy (Getting Started)
+---
 
-### Yêu cầu môi trường
-- [Node.js](https://nodejs.org/) phiên bản 18 trở lên
-- npm hoặc yarn / pnpm
+## 🚀 Cài đặt & Khởi chạy (Hướng dẫn chi tiết)
 
-### Các bước cài đặt:
+### Yêu cầu tiên quyết:
+- Cài đặt **[Node.js](https://nodejs.org/)** (phiên bản 18 hoặc 20 LTS trở lên). *(Nếu máy bạn chưa có, chỉ cần tải bản LTS về và bấm Next liên tục để cài).*
 
-1. **Clone repository:**
+---
+
+### 🪟 Dành cho người dùng Windows (Dễ nhất - 1 Click)
+
+1. **Tải mã nguồn về máy:**
+   - Bấm vào nút xanh **Code** trên GitHub $\rightarrow$ chọn **Download ZIP** (hoặc dùng `git clone`).
+   - Giải nén file zip vào một thư mục bất kỳ trên máy tính.
+2. **Khởi chạy ứng dụng:**
+   - Nhấp đúp chuột (Double click) vào tệp **`chay_ung_dung.bat`**.
+   - *Tệp này sẽ tự động kiểm tra Node.js, tự động chạy `npm install` cài đặt thư viện cần thiết ở lần đầu mở, và tự động bật trình duyệt web tại `http://localhost:5173`!*
+   - Khi không dùng nữa, chỉ cần đóng cửa sổ dòng lệnh màu đen là xong.
+
+---
+
+### 🐧 Dành cho người dùng Linux / macOS
+
+1. Mở Terminal tại thư mục dự án.
+2. Chạy tệp script tự động:
    ```bash
-   git clone https://github.com/triet335/CSDL-Relational-Algebra-Helper.git
-   cd CSDL-Relational-Algebra-Helper
+   ./chay_ung_dung.sh
    ```
+   *(Trình duyệt sẽ tự động mở lên tại `http://localhost:5173`)*.
 
-2. **Cài đặt các gói phụ thuộc:**
-   ```bash
-   npm install
-   ```
+---
 
-3. **Khởi chạy máy chủ phát triển:**
-   ```bash
-   npm run dev
-   ```
-   Mở trình duyệt tại: `http://localhost:5173`
+### 💻 Chạy thủ công bằng Terminal / PowerShell / CMD
 
-4. **Đóng gói phiên bản Production:**
-   ```bash
-   npm run build
-   ```
+Nếu bạn thích dùng dòng lệnh:
+
+```bash
+# 1. Cài đặt các thư viện phụ thuộc (chỉ cần chạy lần đầu)
+npm install
+
+# 2. Khởi chạy máy chủ phát triển và tự động mở trình duyệt
+npm run dev -- --open
+
+# 3. (Tùy chọn) Đóng gói bản production chạy offline
+npm run build
+```
 
 ---
 
