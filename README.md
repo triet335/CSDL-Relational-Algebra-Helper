@@ -4,6 +4,8 @@
 
 Chạy **100% Local-first** trên trình duyệt, không cần cài đặt máy chủ database backend!
 
+🌐 **Trực tiếp trên web (Live Demo):** [https://triet335.github.io/CSDL-Relational-Algebra-Helper/](https://triet335.github.io/CSDL-Relational-Algebra-Helper/)
+
 ---
 
 ## 🌟 Điểm nổi bật (Key Features)

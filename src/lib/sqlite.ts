@@ -16,8 +16,11 @@ async function loadInitSqlJs(): Promise<(config?: any) => Promise<SqlJsStatic>> 
     if (typeof document === 'undefined') {
       return reject(new Error('Chỉ hỗ trợ môi trường trình duyệt.'));
     }
+    const baseUrl = (import.meta as any).env?.BASE_URL || './';
+    const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
     const script = document.createElement('script');
-    script.src = '/sql-wasm.js';
+    script.src = `${normalizedBase}sql-wasm.js`;
     script.onload = () => {
       if ((window as any).initSqlJs) {
         resolve((window as any).initSqlJs);
@@ -49,10 +52,13 @@ async function loadInitSqlJs(): Promise<(config?: any) => Promise<SqlJsStatic>> 
 export async function getSqlEngine(): Promise<SqlJsStatic> {
   if (SQL) return SQL;
   const init = await loadInitSqlJs();
+  const baseUrl = (import.meta as any).env?.BASE_URL || './';
+  const normalizedBase = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+
   try {
     SQL = await init({
       locateFile: (file: string) => {
-        return `/${file}`;
+        return `${normalizedBase}${file}`;
       }
     });
     return SQL;
