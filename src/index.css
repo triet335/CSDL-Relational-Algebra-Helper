@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased selection:bg-blue-100 selection:text-blue-900;
+  }
+}
+
+/* Tinh chỉnh KaTeX Display */
+.katex-display {
+  margin: 0.25rem 0 !important;
+}
+
+.katex {
+  font-size: 1.15em !important;
+}
